@@ -1,0 +1,15 @@
+# Firebase 관련 대용량 파일 제외
+PenguinAdventure/Assets/Firebase/Plugins/x86_64/FirebaseCppApp-12_5_0.bundle
+PenguinAdventure/Assets/Firebase/Plugins/x86_64/FirebaseCppApp-12_5_0.so
+
+# WebGL 빌드 관련 파일 제외
+PenguinAdventure/Library/Bee/artifacts/WebGL/GameAssembly/master_WebGL_wasm/GameAssembly.bc
+PenguinAdventure/Library/Bee/artifacts/WebGL/il2cppOutput/build/GameAssembly.bc
+
+# Unity 빌드 관련 폴더 제외
+PenguinAdventure/Library/
+PenguinAdventure/Temp/
+PenguinAdventure/Obj/
+PenguinAdventure/Build/
+PenguinAdventure/Builds/
+PenguinAdventure/Logs/

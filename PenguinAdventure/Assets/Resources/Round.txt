@@ -1,0 +1,24 @@
+{
+    "rounds": [
+        {
+            "roundType": "normal",
+            "monsterList": ["Bottle"],
+            "monsterNum": 10
+        },
+        {
+            "roundType": "normal",
+            "monsterList": ["Mask"],
+            "monsterNum": 10
+        },
+        {
+            "roundType": "normal",
+            "monsterList": ["Oil"],
+            "monsterNum": 10
+        },
+        {
+            "roundType": "boss",
+            "monsterList": ["Factory"],
+            "monsterNum": 10
+        }
+    ]
+}

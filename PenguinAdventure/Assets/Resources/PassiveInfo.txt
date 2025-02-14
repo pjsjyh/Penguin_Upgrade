@@ -1,0 +1,63 @@
+[
+    {
+        "title": "무적 효과",
+        "discription": "n 초 동안 모든 공격에 면역 상태가 된다.",
+        "nowLevel": 1,
+        "limitLevel": 5,
+        "imgSource": "Images/invincibility",
+        "GimgSource": "Images/Ginvincibility",
+         "abilities": [
+            { "duration": 1.0, "cooldown": 10 },
+            { "duration": 2.0, "cooldown": 10 },
+            {"duration": 2.5, "cooldown": 10 },
+            {"duration": 3.0, "cooldown": 10 },
+            {  "duration": 3.5, "cooldown": 10 }
+        ]
+    },
+    {
+        "title": "스피드 향상",
+        "discription": "스피드가 n 만큼 빨라진다.",
+        "nowLevel": 1,
+        "limitLevel": 5,
+        "imgSource": "Images/speedup",
+        "GimgSource": "Images/Gspeedup",
+         "abilities": [
+           { "duration": 1.5, "cooldown": 10 },
+            { "duration": 2.0, "cooldown": 10 },
+            {"duration": 2.5, "cooldown": 10 },
+            {"duration": 3.0, "cooldown": 10 },
+            {  "duration": 3.5, "cooldown": 10 }
+        ]
+
+    },
+    {
+        "title": "체력 증가",
+        "discription": "체력이 n 만큼 뿜뿜",
+        "nowLevel": 0,
+        "limitLevel": 5,
+        "imgSource": "Images/healthup",
+        "GimgSource": "Images/Ghealthup",
+         "abilities": [
+           { "duration": 1.5, "cooldown": 10 },
+            { "duration": 2.0, "cooldown": 10 },
+            {"duration": 2.5, "cooldown": 10 },
+            {"duration": 3.0, "cooldown": 10 },
+            {  "duration": 3.5, "cooldown": 10 }
+        ]
+    },
+    {
+        "title": "북극곰아 도와줘",
+        "discription": "n 초에 한번 펭귄친구를 도와줄 북극곰 등장",
+        "nowLevel": 0,
+        "limitLevel": 5,
+        "imgSource": "Images/bearhelp",
+        "GimgSource": "Images/Gbearhelp",
+         "abilities": [
+            { "duration": 1.5, "cooldown": 10 },
+            { "duration": 2.0, "cooldown": 9 },
+            {"duration": 2.5, "cooldown": 8 },
+            {"duration": 3.0, "cooldown": 7 },
+            {  "duration": 3.5, "cooldown": 6 }
+        ]
+    }
+]

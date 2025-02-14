@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7157261941828111187
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7157261941828111185}
+  - component: {fileID: 7157261941828111184}
+  m_Layer: 0
+  m_Name: PoolManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7157261941828111185
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7157261941828111187}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.04600674, y: 0.080085814, z: 0.0027689128}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7157261941828111184
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7157261941828111187}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a02d1ab42ae741c42ba8ca3c87be6ef2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefabs:
+  - {fileID: 6753968837672818098, guid: 1535d1cb82a0f954aa36bbaf13726991, type: 3}
+  - {fileID: 5027005106779089190, guid: 821864963a38f2f4a81171d2b09f55f9, type: 3}
+  - {fileID: 2237400063663239881, guid: ed5483159bd052844aeea75e4ac1f879, type: 3}
+  - {fileID: 8556032540279837304, guid: fd77026bbbc820e4dba9ad87022c2afc, type: 3}
+  - {fileID: 9089443379761087178, guid: 32fac4285d5c872468e1571186c1456c, type: 3}
+  - {fileID: 3680247161852610182, guid: efb20cd7201f68448b8cb54af1ddcfb1, type: 3}
+  - {fileID: 4801996345253815069, guid: ccf66513923f80e4fb08567eb7ecba24, type: 3}
+  - {fileID: 4107567543638189861, guid: 2ca8342f8c4dbcc4ba0d6b13d1a60797, type: 3}
