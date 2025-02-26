@@ -14,9 +14,9 @@ public class WebGLFirebaseManager : MonoBehaviour
     }
 
     [DllImport("__Internal")]
-    private static extern void SaveScoreToFirebase(string username, float score);
+    private static extern void SaveScoreToFirebase(string username, int score);
 
-    public void SaveScore(string username, float score)
+    public void SaveScore(string username, int score)
     {
         if (Application.platform == RuntimePlatform.WebGLPlayer)
         {

@@ -7,7 +7,7 @@ using WaveMonsterSpawnScript;
 
 public class timerManager : MonoBehaviour
 {
-    public float sumExp = 0;
+    public int sumExp = 0;
     public int seconds = 30;
     public TextMeshProUGUI timerText; // 변경할 TMP 텍스트를 할당할 변수
     public TextMeshProUGUI waveText; // 변경할 TMP 텍스트를 할당할 변수
@@ -19,6 +19,7 @@ public class timerManager : MonoBehaviour
         // 카운트다운 코루틴 시작
         if (monsterSpawner != null)
         {
+
             monsterSpawner.SpawnWave(0);
         }
         StartCoroutine(Countdown());
@@ -73,7 +74,7 @@ public class timerManager : MonoBehaviour
     {
 
     }
-    public void sumex(float ex)
+    public void sumex(int ex)
     {
         sumExp += ex;
     }

@@ -81,7 +81,7 @@ public class GameManager : MonoBehaviour
             if (wrapper != null && wrapper.rounds != null)
             {
                 round = wrapper.rounds;
-                Debug.Log("JSON 불러오기 성공! 라운드 개수: " + round.Length);
+                //Debug.Log("JSON 불러오기 성공! 라운드 개수: " + round.Length);
             }
             else
             {

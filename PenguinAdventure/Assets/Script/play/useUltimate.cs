@@ -13,6 +13,7 @@ public class useUltimate : MonoBehaviour
     public bool nowUseWltimate = false;
     private void Start()
     {
+        penguin = GameObject.Find("PenguinPlayer");
         GameObject ultimateObject = GameObject.Find("ultimateBTN");
         Image buttonImage = ultimateObject.GetComponent<Image>();
         if (buttonImage != null && Ultimate.Length > selectUltimate)

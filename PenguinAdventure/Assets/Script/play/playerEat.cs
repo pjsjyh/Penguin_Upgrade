@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class playerEat : MonoBehaviour
 {
-    public float experience = 10;
+    public int experience = 10;
     public AudioSource clip;
     void OnTriggerEnter2D(Collider2D other)
     {

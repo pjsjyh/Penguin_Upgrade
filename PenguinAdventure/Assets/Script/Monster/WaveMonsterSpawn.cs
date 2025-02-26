@@ -37,7 +37,7 @@ namespace WaveMonsterSpawnScript
         public void SpawnWave(int level)
         {
             Debug.Log("WAVE " + level + " 몬스터 생성!");
-           
+            
             MonsterFactory.CreateMonster(level);
             //if (level % 4 == 0)
             //{

@@ -3,7 +3,7 @@
         {
             "roundType": "normal",
             "monsterList": ["Bottle"],
-            "monsterNum": 5
+            "monsterNum": 10
         },
         {
             "roundType": "normal",
