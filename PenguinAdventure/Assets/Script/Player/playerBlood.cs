@@ -27,17 +27,28 @@ public class playerBlood : MonoBehaviour
         }
 
     }
+    public void GameResatart()
+    {
+        HPvalue = Math.Max(100, PlayerManager.Instance.myPlayer._hp);
+        bloodSlider.maxValue = HPvalue;
+        bloodSlider.value = HPvalue;
+    }
     public void getDamage(float damage)
     {
         HPvalue -= damage;
         bloodSlider.value = HPvalue;
-
+        if (gameoverView == null)
+        {
+            gameoverView = GameObject.Find("GameOverView");
+        }
         if (HPvalue <= 0)
         {
-            gameoverView.SetActive(true);
+            gameoverView.transform.GetChild(0).gameObject.SetActive(true);
             GameObject.Find("scoreText").GetComponent<TextMeshProUGUI>().text = GameObject.Find("GameManage").GetComponent<timerManager>().sumExp.ToString();
             WebGLFirebaseManager.Instance.SaveScore(PlayerManager.Instance.myPlayer._name, GameObject.Find("GameManage").GetComponent<timerManager>().sumExp);
-
+            GameManager.Instance.IsGameStart = false;
+            MonsterPoolManager.Instance.clearMonster();
+            GameResatart();
         }
     }
 

@@ -12,15 +12,43 @@ public class waterDropFunc : MonoBehaviour
 
     public bool friendsCk = false;
     private bool isFiring = false;          // 발사 상태 플래그
+    bool isGameStart = true;
     private Coroutine fireCoroutine;
     void Start()
     {
         // 발사 중이 아니면 코루틴 시작
-        fireCoroutine = StartCoroutine(FireSpreadAttack());
+        //fireCoroutine = StartCoroutine(FireSpreadAttack());
         // isFiring = true;
+        if (GameManager.Instance == null)
+        {
+            Debug.LogError("❌ GameManager.Instance가 null입니다! 구독할 수 없음.");
+        }
+        else
+        {
+            GameManager.Instance.OnGameStartChanged += HandleGameStart;
+        }
+        if (this.CompareTag("Enemy"))
+        {
+            fireCoroutine = StartCoroutine(FireSpreadAttack());
+        }
     }
 
-
+    private void HandleGameStart(bool gameStarted)
+    {
+        if (gameStarted)
+        {
+            fireCoroutine = StartCoroutine(FireSpreadAttack());
+        }
+        else
+        {
+            if(fireCoroutine != null)
+            {
+                StopCoroutine(fireCoroutine);
+                fireCoroutine = null;
+            }
+          
+        }
+    }
     IEnumerator FireSpreadAttack()
     {
         while (true)

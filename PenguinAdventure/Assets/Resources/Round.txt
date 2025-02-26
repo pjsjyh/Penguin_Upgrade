@@ -3,7 +3,7 @@
         {
             "roundType": "normal",
             "monsterList": ["Bottle"],
-            "monsterNum": 10
+            "monsterNum": 5
         },
         {
             "roundType": "normal",
@@ -19,6 +19,86 @@
             "roundType": "boss",
             "monsterList": ["Factory"],
             "monsterNum": 10
+        },
+        {
+            "roundType": "normal",
+            "monsterList": ["Bottle", "Paper"],
+            "monsterNum": 15
+        },
+        {
+            "roundType": "normal",
+            "monsterList": ["Mask", "Strow"],
+            "monsterNum": 15
+        },
+        {
+            "roundType": "normal",
+            "monsterList": ["Oil", "PotatoBag"],
+            "monsterNum": 15
+        },
+        {
+            "roundType": "boss",
+            "monsterList": ["Factory"],
+            "monsterNum": 10
+        },
+          {
+            "roundType": "normal",
+            "monsterList": ["Bottle", "Paper"],
+            "monsterNum": 20
+        },
+        {
+            "roundType": "normal",
+            "monsterList": ["Mask", "PlasticBottle"],
+            "monsterNum": 20
+        },
+        {
+            "roundType": "normal",
+            "monsterList": ["Oil", "PotatoBag"],
+            "monsterNum": 20
+        },
+        {
+            "roundType": "boss",
+            "monsterList": ["Factory"],
+            "monsterNum": 20
+        },
+          {
+            "roundType": "normal",
+            "monsterList": ["Bottle", "Paper"],
+            "monsterNum": 30
+        },
+        {
+            "roundType": "normal",
+            "monsterList": ["Mask", "PlasticBottle"],
+            "monsterNum": 30
+        },
+        {
+            "roundType": "normal",
+            "monsterList": ["Oil", "PotatoBag"],
+            "monsterNum": 30
+        },
+        {
+            "roundType": "boss",
+            "monsterList": ["Factory"],
+            "monsterNum": 20
+        },
+          {
+            "roundType": "normal",
+            "monsterList": ["Bottle", "Paper"],
+            "monsterNum": 40
+        },
+        {
+            "roundType": "normal",
+            "monsterList": ["Mask", "PlasticBottle"],
+            "monsterNum": 40
+        },
+        {
+            "roundType": "normal",
+            "monsterList": ["Oil", "PotatoBag"],
+            "monsterNum": 40
+        },
+        {
+            "roundType": "boss",
+            "monsterList": ["Factory"],
+            "monsterNum": 20
         }
     ]
 }

@@ -5,7 +5,11 @@ public class RankingBtn : MonoBehaviour
 {
     // Start is called before the first frame update
     public GameObject RankingPanel;
-   
+
+    private void Start()
+    {
+        RankingPanel = GameObject.Find("RankingPanel").transform.GetChild(0).gameObject;
+    }
     public void RankingOn()
     {
        

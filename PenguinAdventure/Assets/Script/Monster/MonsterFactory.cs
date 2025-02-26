@@ -20,7 +20,7 @@ public class MonsterFactory
         }
 
         roundSetting round = GameManager.Instance.round[getlevel];
-
+        Vector2 playerPosition = GameManager.Instance.playerInstance.transform.position;
         if (round != null)
         {
             if (round.roundType == "normal")
@@ -29,17 +29,16 @@ public class MonsterFactory
                 {
                     int random = Random.Range(0, round.monsterList.Length);
                     string monsterName = round.monsterList[random];
+                    int random2 = Random.Range(0, round.monsterNum);
+                    Vector2 spawnPosition = playerPosition + Random.insideUnitCircle.normalized * 15f;
 
-                    GameObject monsterPrefab = Resources.Load<GameObject>("Prefab/Monster/" + monsterName);
-                    if (monsterPrefab == null)
-                    {
-                        Debug.LogError($"몬스터 프리팹을 찾을 수 없음: {monsterName}");
-                        continue;
-                    }
 
                     // ✅ `waveSpawner.spawnPoint` 사용하여 위치 가져오기
-                    Vector2 spawnPosition = waveSpawner.spawnPoint[i % waveSpawner.spawnPoint.Length+1].position;
-                    GameObject monsterInstance = Object.Instantiate(monsterPrefab, spawnPosition, Quaternion.identity);
+                   // Vector2 spawnPosition = waveSpawner.spawnPoint[i % waveSpawner.spawnPoint.Length+1].position;
+                    //GameObject monsterInstance = Object.Instantiate(monsterPrefab, spawnPosition, Quaternion.identity);
+                    GameObject monsterInstance = MonsterPoolManager.Instance.GetMonster(monsterName, spawnPosition);
+
+
                     monsterInstance.name = monsterName;
                 }
             }
@@ -48,17 +47,14 @@ public class MonsterFactory
                 int random = Random.Range(0, round.monsterList.Length);
                 string monsterName = round.monsterList[random];
 
-                GameObject monsterPrefab = Resources.Load<GameObject>("Prefab/Monster/" + monsterName);
-                if (monsterPrefab != null)
-                {
-                    int rando2m = Random.Range(1, waveSpawner.spawnPoint.Length);
-                    // ✅ `waveSpawner.spawnPoint` 사용하여 위치 가져오기
-                    Vector2 spawnPosition = waveSpawner.spawnPoint[rando2m].position;
-                    GameObject monsterInstance = Object.Instantiate(monsterPrefab, spawnPosition, Quaternion.identity);
-                    monsterInstance.name = monsterName;
-                }
+                int rando2m = Random.Range(1, waveSpawner.spawnPoint.Length);
+                // ✅ `waveSpawner.spawnPoint` 사용하여 위치 가져오기
+                Vector2 spawnPosition = waveSpawner.spawnPoint[rando2m].position;
 
-               
+                GameObject monsterInstance = MonsterPoolManager.Instance.GetMonster(monsterName, spawnPosition);
+                monsterInstance.name = monsterName;
+
+
             }
             
         }

@@ -59,17 +59,29 @@ public class skillManage : MonoBehaviour
     List<inputSkill> skillList_select = new List<inputSkill>();
     bool Once = false;
 
-    public GameObject Friendsview;
-    public GameObject sardineview;
-    public GameObject IceStampView;
-    public GameObject IceZoneView;
-    public GameObject LightSkillView;
+    GameObject Friendsview;
+    GameObject sardineview;
+    GameObject IceStampView;
+    GameObject IceZoneView;
+    GameObject LightSkillView;
 
     private void Awake()
     {
         skillList_select = skillItems;
         SelectSkill(skillItems[3].skillName);
         GameObject.Find("PenguinPlayer").GetComponent<waterDropFunc>().numberOfBullets = 1;
+        Transform playerin = GameManager.Instance.playerInstance.transform;
+        Friendsview = playerin.Find("FriendsSkillSpawner").gameObject;
+        sardineview = playerin.Find("sardineSpawner").gameObject;
+        IceStampView = playerin.Find("IceStampSpawner").gameObject;
+        IceZoneView = playerin.Find("IcezoneSpawner").gameObject;
+        LightSkillView = playerin.Find("Spawner").gameObject;
+        Friendsview.SetActive(false);
+        sardineview.SetActive(false);
+        IceStampView.SetActive(false);
+        IceZoneView.SetActive(false);
+        LightSkillView.SetActive(false);
+
     }
     public void setSkill()
     {
@@ -135,11 +147,11 @@ public class skillManage : MonoBehaviour
             GameObject child = skillList.transform.GetChild(i).gameObject;
             childObjects.Add(child);
         }
-
         // 결과 출력
         foreach (var child in childObjects)
         {
             skillInfo info = child.GetComponent<skillInfo>();
+            Debug.Log(skill.skillName + " "+ info.SkillName);
             if (info.SkillName == skill.skillName)
             {
                 info.level = skill.SkillLevel;
@@ -184,7 +196,6 @@ public class skillManage : MonoBehaviour
             {
                 if (skill.skillName == "물방울 쏘아내기!" || skill.skillName == "원거리 공격 개수 증가")
                 {
-                    Debug.Log(skill.skillName);
                     GameObject.Find("PenguinPlayer").GetComponent<waterDropFunc>().numberOfBullets += 1;
                 }
 

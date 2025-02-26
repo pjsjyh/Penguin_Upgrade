@@ -27,14 +27,6 @@ public class miscellaneous : Enemy
             Debug.Log("Monster collided with the player!");
         }
     }
-    private void Start()
-    {
-        // moveSpeed = 3;
-    }
-    private void Update()
-    {
-
-    }
 }
 
 // Boss 클래스

@@ -10,8 +10,10 @@ public class EnemyInfo : MonoBehaviour
     private Color targetColor = new Color(1.0f, 0.55f, 0.55f);
     public float Damage = 10f;
     public float Blood = 50f;
-    public float ExperienceCapacity = 10;
-
+    public float ExperienceCapacity = 50;
+    public float DamageMore = 10f;
+    public float BloodMore = 5;
+    public float ExperienceMore = 2;
     public GameObject experienceObj;
     private void Start()
     {
@@ -28,8 +30,9 @@ public class EnemyInfo : MonoBehaviour
         StartCoroutine(ChangeColorCoroutine());
         if (Blood < 0)
         {
+            spriteRenderer.color = originalColor;
             Instantiate(experienceObj, gameObject.transform.position, Quaternion.identity);
-            Destroy(gameObject);
+            MonsterPoolManager.Instance.ReturnMonster(gameObject);
         }
 
     }

@@ -176,7 +176,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Damage: 10
   Blood: 50
-  ExperienceCapacity: 10
+  ExperienceCapacity: 30
+  DamageMore: 5
+  BloodMore: 5
+  ExperienceMore: 2
   experienceObj: {fileID: 1940948144138889382, guid: c76f32ec555ffd0489c50cb5fae1d4d5, type: 3}
 --- !u!61 &3072240917680426068
 BoxCollider2D:

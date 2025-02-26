@@ -170,6 +170,9 @@ MonoBehaviour:
   Damage: 20
   Blood: 100
   ExperienceCapacity: 20
+  DamageMore: 5
+  BloodMore: 5
+  ExperienceMore: 2
   experienceObj: {fileID: 1833253032396455722, guid: fe3e8f91ce88af645a95232b153a17de, type: 3}
 --- !u!114 &3773288339723311939
 MonoBehaviour:

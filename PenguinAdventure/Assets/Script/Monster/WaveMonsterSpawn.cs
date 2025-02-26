@@ -22,7 +22,7 @@ namespace WaveMonsterSpawnScript
 
             spawnPoint = GetComponentsInChildren<Transform>();
             //spawn(0);
-            MonsterFactory.CreateMonster(0);
+            //MonsterFactory.CreateMonster(0);
         }
 
 

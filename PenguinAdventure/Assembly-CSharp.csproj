@@ -67,10 +67,12 @@
     <Compile Include="Assets\Script\play\skill\firensSkill.cs" />
     <Compile Include="Assets\Script\Lobby\PassiveManager.cs" />
     <Compile Include="Assets\Script\Lobby\RankingBtn.cs" />
+    <Compile Include="Assets\Script\Lobby\StartEventSet.cs" />
     <Compile Include="Assets\Script\Monster\bossSpawn.cs" />
     <Compile Include="Assets\Script\play\UI\SkillPanelController.cs" />
     <Compile Include="Assets\Script\Monster\Monster.cs" />
     <Compile Include="Assets\Script\GameManager.cs" />
+    <Compile Include="Assets\Script\Lobby\DotsAnimation.cs" />
     <Compile Include="Assets\Script\play\UI\randomUltimate.cs" />
     <Compile Include="Assets\Script\Login\GoNextScene.cs" />
     <Compile Include="Assets\Script\play\UI\pauseBtn.cs" />
@@ -86,6 +88,7 @@
     <Compile Include="Assets\Script\Lobby\Passive.cs" />
     <Compile Include="Assets\Script\Lobby\NextScene.cs" />
     <Compile Include="Assets\Script\play\skill\SkillSpriteDestory.cs" />
+    <Compile Include="Assets\Script\Monster\MonsterPoolManager.cs" />
     <Compile Include="Assets\Script\play\skillManage.cs" />
     <Compile Include="Assets\Script\play\playerEat.cs" />
     <Compile Include="Assets\Script\Lobby\PassiveInfo.cs" />
@@ -104,9 +107,9 @@
     <Compile Include="Assets\Script\Player\playerSkillDamage.cs" />
     <Compile Include="Assets\Script\Lobby\PassiveUISetting.cs" />
     <Compile Include="Assets\Script\play\UI\skillSet.cs" />
+    <Compile Include="Assets\Script\play\PlayCamSet.cs" />
     <Compile Include="Assets\Script\Player\SkillSpawner.cs" />
     <Compile Include="Assets\Script\play\randomSample.cs" />
-    <Compile Include="Assets\Script\Monster\PoolManager.cs" />
     <Compile Include="Assets\Script\play\skill\particleOpacity.cs" />
     <Compile Include="Assets\Script\play\skill\particleColusion.cs" />
     <Compile Include="Assets\Script\play\skill\IceStampSkill.cs" />

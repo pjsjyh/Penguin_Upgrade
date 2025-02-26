@@ -17,7 +17,10 @@ public class timerManager : MonoBehaviour
     {
         monsterSpawner = FindObjectOfType<WaveMonsterSpawn>();
         // 카운트다운 코루틴 시작
-        monsterSpawner.SpawnWave(0);
+        if (monsterSpawner != null)
+        {
+            monsterSpawner.SpawnWave(0);
+        }
         StartCoroutine(Countdown());
     }
 

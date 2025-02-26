@@ -1,15 +1,36 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using PlayerInfoManager;
 using roundSettingScript;
+using System;
+
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
-    public PoolManager poolmanager;
     public Player player;
-
+    public GameObject playerPrefab;
     public roundSetting[] round;
+    public GameObject playerInstance;
+ 
+    public bool _isGameStart = false;
+    public event Action<bool> OnGameStartChanged;
+
+
+    public bool IsGameStart
+    {
+        get => _isGameStart;
+        set
+        {
+            if (_isGameStart != value) // âœ… ê°’ì´ ë³€ê²½ë  ë•Œë§Œ ì‹¤í–‰
+            {
+                _isGameStart = value;
+                Debug.Log($"ğŸ® ê²Œì„ ìƒíƒœ ë³€ê²½: {_isGameStart}");
+
+                OnGameStartChanged?.Invoke(_isGameStart);
+            }
+        }
+    }
     // Start is called before the first frame update
     private void Awake()
     {
@@ -24,32 +45,52 @@ public class GameManager : MonoBehaviour
             if (Instance != this)
                 Destroy(this.gameObject);
         }
-      
 
     }
-
+    void Start()
+    {
+       
+        StartCoroutine(GameStartRoutine());
+    }
+    IEnumerator GameStartRoutine()
+    {
+        CreatePlayer();
+        yield return new WaitForSeconds(1f);
+        MonsterPoolManager.Instance.InitializePools(20);
+    }
+    void CreatePlayer()
+    {
+        if (playerPrefab != null)
+        {
+            playerInstance = Instantiate(playerPrefab);
+            playerInstance.name = "PenguinPlayer";
+           // playerInstance.transform.position = new Vector3(0, 0, 0);
+            player = playerInstance.GetComponent<Player>();
+            DontDestroyOnLoad(playerInstance);
+        }
+    }
     void LoadSettings()
     {
         TextAsset jsonFile = Resources.Load<TextAsset>("Round");
 
         if (jsonFile != null)
         {
-            // JSON ¹®ÀÚ¿­À» roundWrapper·Î º¯È¯
+            // JSON ë¬¸ìì—´ì„ roundWrapperë¡œ ë³€í™˜
             roundWrapper wrapper = JsonUtility.FromJson<roundWrapper>(jsonFile.text);
 
             if (wrapper != null && wrapper.rounds != null)
             {
                 round = wrapper.rounds;
-                Debug.Log("JSON ºÒ·¯¿À±â ¼º°ø! ¶ó¿îµå °³¼ö: " + round.Length);
+                Debug.Log("JSON ë¶ˆëŸ¬ì˜¤ê¸° ì„±ê³µ! ë¼ìš´ë“œ ê°œìˆ˜: " + round.Length);
             }
             else
             {
-                Debug.LogError("JSON ÆÄ½Ì ½ÇÆĞ - µ¥ÀÌÅÍ°¡ ¾ø½À´Ï´Ù.");
+                Debug.LogError("JSON íŒŒì‹± ì‹¤íŒ¨ - ë°ì´í„°ê°€ ì—†ìŠµë‹ˆë‹¤.");
             }
         }
         else
         {
-            Debug.LogError("JSON ÆÄÀÏÀ» Ã£À» ¼ö ¾ø½À´Ï´Ù.");
+            Debug.LogError("JSON íŒŒì¼ì„ ì°¾ì„ ìˆ˜ ì—†ìŠµë‹ˆë‹¤.");
         }
     }
 
