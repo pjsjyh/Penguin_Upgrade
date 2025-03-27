@@ -5,7 +5,7 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/LoginScene.unity
     guid: 1c7fd7c58fe3d0846b4e738b605f28b1
   - enabled: 1
@@ -23,4 +23,5 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/playScene.unity
     guid: 760cbf99dd59c7245892e4c1b5d8a4b6
-  m_configObjects: {}
+  m_configObjects:
+    com.unity.addressableassets: {fileID: 11400000, guid: ae38e122bb1c6184bb7594aae7681957, type: 2}

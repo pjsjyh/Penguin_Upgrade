@@ -22,6 +22,7 @@ public class NextScene : MonoBehaviour
         // ✅ 먼저 로딩 씬을 불러옴
         AsyncOperation loadingScene = SceneManager.LoadSceneAsync("LoadingScene");
         yield return new WaitUntil(() => loadingScene.isDone); // 로딩 씬이 완전히 로드될 때까지 기다림
+        GameObject.Find("PenguinPlayer").transform.position = new Vector3(0, 0, 0);
 
         // ✅ 오브젝트 풀 초기화 (MonsterPoolManager의 몬스터 생성이 끝날 때까지 대기)
         yield return StartCoroutine(check());

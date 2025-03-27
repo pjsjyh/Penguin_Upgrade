@@ -3787,6 +3787,18 @@ MonoBehaviour:
   - {fileID: 2403816446864998585, guid: 0f28b540557b4f34ab29becdc0611d93, type: 3}
   - {fileID: 4107567543638189861, guid: 2ca8342f8c4dbcc4ba0d6b13d1a60797, type: 3}
   - {fileID: 4801996345253815069, guid: ccf66513923f80e4fb08567eb7ecba24, type: 3}
+  monsterKeys:
+  - Prefab/Monster/Bottle
+  - Prefab/Monster/Cigarette
+  - Prefab/Monster/Factory
+  - Prefab/Monster/Mask
+  - Prefab/Monster/Oil
+  - Prefab/Monster/Paper
+  - Prefab/Monster/PlasticBottle
+  - Prefab/Monster/PotatoBag
+  - Prefab/Monster/Rradioactivity
+  - Prefab/Monster/Strow
+  - Prefab/Monster/Smoke
   ismakeFinish: 0
 --- !u!4 &897279716
 Transform:

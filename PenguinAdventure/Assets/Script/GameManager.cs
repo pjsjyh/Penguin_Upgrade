@@ -56,7 +56,7 @@ public class GameManager : MonoBehaviour
     {
         CreatePlayer();
         yield return new WaitForSeconds(1f);
-        MonsterPoolManager.Instance.InitializePools(20);
+        MonsterPoolManager.Instance.StartMakeMonster(2);
     }
     void CreatePlayer()
     {
