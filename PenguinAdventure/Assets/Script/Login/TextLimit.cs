@@ -7,6 +7,8 @@ using TMPro;
 using UnityEngine.SceneManagement;
 using PlayerInfoManager;
 using LoginM;
+using UnityEngine.AddressableAssets;
+
 public class TextLimit : MonoBehaviour
 {
     // Start is called before the first frame update
@@ -65,7 +67,7 @@ public class TextLimit : MonoBehaviour
     {
         if (wordlen != 0)
         {
-            AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("LobbyScene");
+            Addressables.LoadSceneAsync("Assets/Scenes/LobbyScene.unity", LoadSceneMode.Single);
 
             PlayerManager.Instance.InitializePlayer();
             PlayerManager.Instance.myPlayer._name = word;

@@ -4,6 +4,10 @@ using UnityEngine;
 using PlayerInfoManager;
 using roundSettingScript;
 using System;
+using Firebase;
+using Firebase.Extensions;
+using UnityEngine.AddressableAssets;
+using UnityEngine.ResourceManagement.AsyncOperations;
 
 public class GameManager : MonoBehaviour
 {
@@ -15,7 +19,7 @@ public class GameManager : MonoBehaviour
  
     public bool _isGameStart = false;
     public event Action<bool> OnGameStartChanged;
-
+    public string playerAddress = "Prefab/PenguinPlayer";
 
     public bool IsGameStart
     {
@@ -51,6 +55,18 @@ public class GameManager : MonoBehaviour
     {
        
         StartCoroutine(GameStartRoutine());
+        FirebaseApp.CheckAndFixDependenciesAsync().ContinueWithOnMainThread(task =>
+        {
+            if (task.Result == DependencyStatus.Available)
+            {
+                Debug.Log("✅ Firebase 초기화 완료");
+                // Firebase 기능 사용 가능!
+            }
+            else
+            {
+                Debug.LogError($"❌ Firebase 초기화 실패: {task.Result}");
+            }
+        });
     }
     IEnumerator GameStartRoutine()
     {
@@ -62,11 +78,26 @@ public class GameManager : MonoBehaviour
     {
         if (playerPrefab != null)
         {
+            Addressables.LoadAssetAsync<GameObject>(playerAddress).Completed += OnPlayerLoaded;
+            //playerInstance = Instantiate(playerPrefab);
+            //playerInstance.name = "PenguinPlayer";
+           // playerInstance.transform.position = new Vector3(0, 0, 0);
+           
+        }
+    }
+    void OnPlayerLoaded(AsyncOperationHandle<GameObject> handle)
+    {
+        if (handle.Status == AsyncOperationStatus.Succeeded)
+        {
+            GameObject playerPrefab = handle.Result;
             playerInstance = Instantiate(playerPrefab);
             playerInstance.name = "PenguinPlayer";
-           // playerInstance.transform.position = new Vector3(0, 0, 0);
             player = playerInstance.GetComponent<Player>();
             DontDestroyOnLoad(playerInstance);
+        }
+        else
+        {
+            Debug.LogError("❌ Player prefab load failed: " + handle.OperationException);
         }
     }
     void LoadSettings()

@@ -11,15 +11,17 @@ public class LobbyManager : MonoBehaviour
     [SerializeField] CanvasGroup panel;
 
     // Start is called before the first frame update
-    [DllImport("__Internal")]
-    private static extern void LoadRankingsFromFirebase();
-
+#if UNITY_WEBGL && !UNITY_EDITOR
+[DllImport("__Internal")]
+private static extern void LoadRankingsFromFirebase();
+#endif
     private void Awake()
     {
-        if (Application.platform == RuntimePlatform.WebGLPlayer)
-        {
-            LoadRankingsFromFirebase();
-        }
+#if UNITY_WEBGL && !UNITY_EDITOR
+LoadRankingsFromFirebase();
+#else
+        GameObject.Find("RankingPanel").GetComponent<Ranking>().LoadTop10Rankings();
+#endif
         if (Instance == null)
         {
             Instance = this;

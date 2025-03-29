@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using Firebase.Database;
+using Firebase.Extensions;
+
 public struct RankInfo
 {
     public string name;
@@ -70,5 +73,50 @@ public class Ranking : MonoBehaviour
             public T[] items;
         }
     }
+    public void LoadTop10Rankings()
+    {
+        FirebaseDatabase.DefaultInstance
+            .GetReference("rankings")
+            .OrderByChild("score")
+            .LimitToLast(10)
+            .GetValueAsync()
+            .ContinueWithOnMainThread(task =>
+            {
+                if (task.IsCompletedSuccessfully)
+                {
+                    List<RankingData> rankings = new();
+
+                    foreach (var child in task.Result.Children)
+                    {
+                        string username = child.Child("username").Value.ToString();
+                        int score = int.Parse(child.Child("score").Value.ToString());
+
+                        rankings.Add(new RankingData { username = username, score = score });
+                    }
+
+                rankings.Sort((a, b) => b.score.CompareTo(a.score));
+                    
+                    makeUI(rankings);
+                }
+                else
+                {
+                    Debug.LogError("❌ Firebase 랭킹 불러오기 실패: " + task.Exception);
+                }
+            });
+    }
+    public void makeUI(List<RankingData> rankings)
+    {
+        nameText.text = "";
+        scoreText.text = "";
+        int i = 0;
+        // ✅ 콘솔에 출력
+        foreach (var entry in rankings)
+        {
+            nameText.text += $"{i + 1}. {entry.username}\n";
+            scoreText.text += $"{entry.score}점\n";
+            i++;
+        }
+    }
 }
+
 

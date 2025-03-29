@@ -17,98 +17,126 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: 4a93092565a963743a2f488682056b46
   m_SerializeEntries:
-  - m_GUID: 1c7fd7c58fe3d0846b4e738b605f28b1
-    m_Address: Assets/Scenes/LoginScene.unity
-    m_ReadOnly: 0
-    m_SerializedLabels: []
   - m_GUID: 3a369a9ae127d98459828199692bba80
     m_Address: Assets/Sound/Plop (1).wav
     m_ReadOnly: 0
     m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 783d28db19ccf2a44b7a50901f9b12f5
     m_Address: Assets/Sound/MA_Puremusic_HaveALittlePun_Loop2_MP3.mp3
     m_ReadOnly: 0
     m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: eceeef72686983341a63c91c5f1f3acc
     m_Address: Assets/Sound/MA_IvanArnold_ThePenguinDance_Main.wav
     m_ReadOnly: 0
     m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 82713b133ddd2f6449c498959705faa6
     m_Address: Assets/Sound/Plop (2).wav
     m_ReadOnly: 0
     m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: b7b3986f6aa25e64db7871a1bbe62a3e
     m_Address: Assets/Sound/Plop (5).wav
     m_ReadOnly: 0
     m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: df83473ed86e8da4cb4786ef5e73768e
     m_Address: "Assets/Sound/\uACB0\uACFC\uCC3D.mp3"
     m_ReadOnly: 0
     m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: ccb9260b31b56e04bba4853cf0644603
     m_Address: "Assets/Sound/\uC2A4\uD0AC\uC120\uD0DD.mp3"
     m_ReadOnly: 0
     m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 4e0d84880715d0541917ffdf11ca59eb
     m_Address: "Assets/Sound/\uC544\uC774\uD15C\uBA39\uC5C8\uC744\uB54C.mp3"
     m_ReadOnly: 0
     m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 2da420006ffa58942ada6ad0ddc2774b
     m_Address: Prefab/Monster/Cigarette
     m_ReadOnly: 0
     m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: e69b4484c62501647969bf9f4318fe16
     m_Address: Prefab/Monster/FactorySkill
     m_ReadOnly: 0
     m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: ad85733bad71d6a448aa61b8445ae594
     m_Address: Prefab/Monster/cigaretteSkill
     m_ReadOnly: 0
     m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 95442d379319c1149bbf2818ce8af8ea
     m_Address: Prefab/Monster/Factory
     m_ReadOnly: 0
     m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 2ca8342f8c4dbcc4ba0d6b13d1a60797
     m_Address: Prefab/Monster/Strow
     m_ReadOnly: 0
     m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 3414a732d1190534aafc1ea95e447caf
     m_Address: Prefab/Monster/radioactivitySkill
     m_ReadOnly: 0
     m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: efb20cd7201f68448b8cb54af1ddcfb1
     m_Address: Prefab/Monster/PotatoBag
     m_ReadOnly: 0
     m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 1535d1cb82a0f954aa36bbaf13726991
     m_Address: Prefab/Monster/Bottle
     m_ReadOnly: 0
     m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: fd77026bbbc820e4dba9ad87022c2afc
     m_Address: Prefab/Monster/Paper
     m_ReadOnly: 0
     m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: ccf66513923f80e4fb08567eb7ecba24
     m_Address: Prefab/Monster/Smoke
     m_ReadOnly: 0
     m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 0f28b540557b4f34ab29becdc0611d93
     m_Address: Prefab/Monster/Rradioactivity
     m_ReadOnly: 0
     m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 821864963a38f2f4a81171d2b09f55f9
     m_Address: Prefab/Monster/Mask
     m_ReadOnly: 0
     m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: ed5483159bd052844aeea75e4ac1f879
     m_Address: Prefab/Monster/Oil
     m_ReadOnly: 0
     m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 32fac4285d5c872468e1571186c1456c
     m_Address: Prefab/Monster/PlasticBottle
     m_ReadOnly: 0
     m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 283957b1d83111040ab353029cb48a75
+    m_Address: Assets/Scenes/LobbyScene.unity
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 68080b4edec48f74da5b83773bb1e7ad
+    m_Address: Prefab/PenguinPlayer
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 36be724dcf1d81c409bc06e2ad11c392, type: 2}
   m_SchemaSet:

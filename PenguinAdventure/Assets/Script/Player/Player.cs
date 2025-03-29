@@ -12,6 +12,8 @@ public class Player : MonoBehaviour
     Rigidbody2D rigid;
     public float speed;
     SpriteRenderer spriter;
+    public VariableJoystick variableJoystick;
+    bool joyon = false;
     // Start is called before the first frame update
     void Awake()
     {
@@ -26,26 +28,91 @@ public class Player : MonoBehaviour
     {
         inputVec.x = Input.GetAxisRaw("Horizontal");
         inputVec.y = Input.GetAxisRaw("Vertical");
+        if (variableJoystick == null)
+        {
+            try
+            {
+                variableJoystick = GameObject.Find("Dynamic").transform.GetChild(0).GetComponent<VariableJoystick>();
+                joyon = true;
+                GameObject.Find("Dynamic").SetActive(true);
+            }
+            catch (System.Exception e)
+            {
+
+            }
+        }
+        if (Application.isMobilePlatform)
+        {
+            if (variableJoystick == null)
+            {
+                try
+                {
+                    variableJoystick = GameObject.Find("Dynamic").transform.GetChild(0).GetComponent<VariableJoystick>();
+                    joyon = true;
+                }
+                catch (System.Exception e)
+                {
+
+                }
+            }
+        }
     }
     private void FixedUpdate()
     {
-        // Vector2 nextVec = inputVec.normalized * speed;
-        // rigid.MovePosition(rigid.position + nextVec);
-        Vector2 nextVec = inputVec.normalized * speed; // 이동할 벡터 계산
-        Vector2 targetPosition = rigid.position + nextVec; // 이동 후 예상 위치
+        //if (joyon)
+        //{
+        //    Vector2 inputVec = new Vector2(variableJoystick.Horizontal, variableJoystick.Vertical);
+        //    Vector2 nextVec = inputVec.normalized * speed; // 이동할 벡터 계산
+        //    Vector2 targetPosition = rigid.position + nextVec; // 이동 후 예상 위치
 
-        // 예상 위치의 x, y 값을 설정된 범위 내로 제한
+        //    // 예상 위치의 x, y 값을 설정된 범위 내로 제한
+        //    targetPosition.x = Mathf.Clamp(targetPosition.x, minX, maxX);
+        //    targetPosition.y = Mathf.Clamp(targetPosition.y, minY, maxY);
+
+        //    // 제한된 위치로 이동
+        //    rigid.MovePosition(targetPosition);
+        //}
+        Vector2 inputVec;
+
+        if (Application.isMobilePlatform)
+        {
+            inputVec = new Vector2(variableJoystick.Horizontal, variableJoystick.Vertical);
+        }
+        else
+        {
+            inputVec = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+        }
+
+        // 🔸 2. 이동 벡터 계산
+        Vector2 nextVec = inputVec.normalized * speed;
+        Vector2 targetPosition = rigid.position + nextVec;
+
+        // 🔸 3. 범위 제한
         targetPosition.x = Mathf.Clamp(targetPosition.x, minX, maxX);
         targetPosition.y = Mathf.Clamp(targetPosition.y, minY, maxY);
 
-        // 제한된 위치로 이동
+        // 🔸 4. 위치 이동
         rigid.MovePosition(targetPosition);
+
+
     }
     private void LateUpdate()
     {
-        if (inputVec.x != 0)
+        if (Application.platform == RuntimePlatform.Android || Application.platform == RuntimePlatform.IPhonePlayer)
         {
-            spriter.flipX = inputVec.x > 0;
+            Vector2 inputVec = new Vector2(variableJoystick.Horizontal, variableJoystick.Vertical);
+            if (inputVec.x != 0)
+            {
+                spriter.flipX = inputVec.x > 0;
+            }
+
+        }
+        else
+        {
+            if (inputVec.x != 0)
+            {
+                spriter.flipX = inputVec.x > 0;
+            }
         }
     }
 }
