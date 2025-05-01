@@ -22,7 +22,7 @@ private static extern void SaveScoreToFirebase(string username, int score);
     public void SaveScore(string username, int score)
     {
 #if UNITY_WEBGL && !UNITY_EDITOR
-    Debug.Log("🔥 WebGL에서 Firebase 점수 저장 요청");
+    Debug.Log("WebGL에서 Firebase 점수 저장 요청");
 
     try
     {
@@ -34,7 +34,7 @@ private static extern void SaveScoreToFirebase(string username, int score);
     }
 
 #else
-        // ✅ Android / iOS / Editor
+        // Android / iOS / Editor
         string userId = SystemInfo.deviceUniqueIdentifier;
 
         var data = new Dictionary<string, object>

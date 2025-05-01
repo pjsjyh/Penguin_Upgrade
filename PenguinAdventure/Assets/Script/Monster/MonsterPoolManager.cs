@@ -38,7 +38,6 @@ public class MonsterPoolManager : MonoBehaviour
             if (!monsterPools.ContainsKey(key))
                 monsterPools[key] = new Queue<GameObject>();
 
-            // ✅ Addressables 로드
             var handle = Addressables.LoadAssetAsync<GameObject>(key);
             yield return handle;
 

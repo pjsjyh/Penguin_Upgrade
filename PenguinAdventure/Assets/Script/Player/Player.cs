@@ -19,8 +19,8 @@ public class Player : MonoBehaviour
     {
         rigid = GetComponent<Rigidbody2D>();
         spriter = GetComponent<SpriteRenderer>();
-        speed = PlayerManager.Instance.myPlayer._moveSpeed / 50;
-        if (speed == 0) speed = 0.2f;
+        speed = PlayerManager.Instance.myPlayer._moveSpeed / 100;
+        if (speed == 0) speed = 0.1f;
     }
 
     // Update is called once per frame
@@ -83,15 +83,15 @@ public class Player : MonoBehaviour
             inputVec = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         }
 
-        // 🔸 2. 이동 벡터 계산
+        //이동 벡터 계산
         Vector2 nextVec = inputVec.normalized * speed;
         Vector2 targetPosition = rigid.position + nextVec;
 
-        // 🔸 3. 범위 제한
+        //범위 제한
         targetPosition.x = Mathf.Clamp(targetPosition.x, minX, maxX);
         targetPosition.y = Mathf.Clamp(targetPosition.y, minY, maxY);
 
-        // 🔸 4. 위치 이동
+        //위치 이동
         rigid.MovePosition(targetPosition);
 
 

@@ -52,7 +52,6 @@ public class useUltimate : MonoBehaviour
             ultimateDelayObject.SetActive(true);
            if(PlayerManager.Instance.SelectedPassive.title=="무적 효과")
             {
-                Debug.Log("무적발동");
                 RuntimeAnimatorController origin = penguin.GetComponent<Animator>().runtimeAnimatorController;
                  penguin.GetComponent<Rigidbody2D>().isKinematic = false;
                  penguin.GetComponent<CapsuleCollider2D>().enabled = false;
@@ -61,7 +60,7 @@ public class useUltimate : MonoBehaviour
             }
             else if (PlayerManager.Instance.SelectedPassive.title == "스피드 향상")
             {
-                penguin.GetComponent<Player>().speed = (PlayerManager.Instance.SelectedPassive.nowLevel * 1.5f)/6;
+                penguin.GetComponent<Player>().speed += (PlayerManager.Instance.SelectedPassive.nowLevel/50f);
                 StartCoroutine(AfterDelay(PlayerManager.Instance.SelectedPassive.nowLevel * 3f));
             }
             else if(PlayerManager.Instance.SelectedPassive.title == "체력 증가")
@@ -83,7 +82,7 @@ public class useUltimate : MonoBehaviour
     private IEnumerator AfterDelay(float delay)
     {
         yield return new WaitForSeconds(delay);
-        penguin.GetComponent<Player>().speed = PlayerManager.Instance.myPlayer._moveSpeed / 50;
+        penguin.GetComponent<Player>().speed -= (PlayerManager.Instance.SelectedPassive.nowLevel / 50f);
     }
     private IEnumerator MuzukrDelay(float delay, RuntimeAnimatorController origin)
     {

@@ -64,7 +64,6 @@ public class PassiveManager : MonoBehaviour
         }
 
         PlayerManager.Instance.SelectedPassive = passiveInfo;
-
         // UI 요소가 연결되었다면 텍스트와 이미지를 설정
         if (passiveText != null && passiveDiscription != null && passiveTextLevel != null && passiveImg != null&& PlayerManager.Instance.SelectedPassive.title!=null)
         {

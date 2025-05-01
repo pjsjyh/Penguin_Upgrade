@@ -7,6 +7,11 @@ public enum MonsterType
 {
     Bottle, Cigarette, Factory, Mask, Oil, Paper, PlasticBottle, PotatoBag, Rradioactivity, Strow,
 }
+public abstract class Monsters
+{
+    public abstract string GetName();
+    public abstract GameObject Spawn(Vector2 position);
+}
 public class MonsterFactory
 {
 
@@ -31,15 +36,13 @@ public class MonsterFactory
                     string monsterName = round.monsterList[random];
                     int random2 = Random.Range(0, round.monsterNum);
                     Vector2 spawnPosition = playerPosition + Random.insideUnitCircle.normalized * 15f;
+                    GameObject monsterInstance = MonsterPoolManager.Instance.GetMonster(monsterName, spawnPosition);
+                    monsterInstance.name = monsterName;
 
 
                     // ✅ `waveSpawner.spawnPoint` 사용하여 위치 가져오기
-                   // Vector2 spawnPosition = waveSpawner.spawnPoint[i % waveSpawner.spawnPoint.Length+1].position;
+                    // Vector2 spawnPosition = waveSpawner.spawnPoint[i % waveSpawner.spawnPoint.Length+1].position;
                     //GameObject monsterInstance = Object.Instantiate(monsterPrefab, spawnPosition, Quaternion.identity);
-                    GameObject monsterInstance = MonsterPoolManager.Instance.GetMonster(monsterName, spawnPosition);
-
-
-                    monsterInstance.name = monsterName;
                 }
             }
             else if(round.roundType == "boss")
