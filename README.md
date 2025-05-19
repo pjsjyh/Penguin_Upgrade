@@ -9,6 +9,9 @@
 #### 참여인원
 개발자 2인, 디자이너 1인
 
+#### 실행 영상
+https://www.youtube.com/watch?v=uT2ozmiKW2Y
+
 #### 실행 링크
 https://penguin-build.vercel.app/
 
@@ -24,19 +27,19 @@ https://penguin-build.vercel.app/
 # 📝사용기술 및 구현 기능
 1) 디자인 패턴을 활용한 관리
    - 싱글톤 패턴을 활용한 플레이어 데이터 관리
-     - 플레이어가 한명인것을 활용해 싱글톤 패턴을 활용해 데이터 관리.
-     - 직접 접근을 제한해 캐릭터 정보 안전한 처리.
+     - 플레이어가 한명인것을 활용해 싱글톤 패턴을 활용해 데이터 관리. [플레이어 스크립트](https://github.com/pjsjyh/Penguin_Upgrade/blob/main/PenguinAdventure/Assets/Script/Player/PlayerManager.cs)
+     - 직접 접근을 제한해 캐릭터 정보 안전한 처리. [플레이어 Damage처리](https://github.com/pjsjyh/Penguin_Upgrade/blob/main/PenguinAdventure/Assets/Script/Player/playerBlood.cs)
 2) JSON을 이용한 데이터 관리
-   -  라운드 정보(몬스터 종류, 마리수, 라운드 타입)를 json으로 저장하고 호출해 셋팅.
-   -  사용자의 패시브 종류를 json으로 저장해 확장하기 쉽도록 설계.
+   -  라운드 정보(몬스터 종류, 마리수, 라운드 타입)를 json으로 저장하고 호출해 셋팅. [json저장](https://github.com/pjsjyh/Penguin_Upgrade/blob/main/PenguinAdventure/Assets/Resources/Round.txt) [라운드 json셋팅](https://github.com/pjsjyh/Penguin_Upgrade/blob/main/PenguinAdventure/Assets/Script/GameManager.cs)
+   -  사용자의 패시브 종류를 json으로 저장해 확장하기 쉽도록 설계. [패시브 저장](https://github.com/pjsjyh/Penguin_Upgrade/blob/main/PenguinAdventure/Assets/Resources/PassiveInfo.txt)
 3) 메모리 관리 최적화
-   - 오브젝트 풀링을 활용한 몬스터 생성 및 재활용.
+   - 오브젝트 풀링을 활용한 몬스터 생성 및 재활용. [몬스터 생성](https://github.com/pjsjyh/Penguin_Upgrade/blob/main/PenguinAdventure/Assets/Script/Monster/MonsterPoolManager.cs)
    - Addressables를 활용한 메모리 절감.
    - 같이 업데이트 되는 UI요소를 Canvas 단위로 분리하여 불필요한 리렌더링 줄이기.
 4) 플레이어 관리
    - namespace와 싱글톤을 이용해 플레이어 관리.
    - 캐릭터 이동을 플랫폼 별로 처리 및 벡터 기반.
 5) 랭킹 시스템
-   - Firebase를 활용해 유니티 WebGL에서 랭킹 시스템 구현.
+   - Firebase를 활용해 유니티 WebGL에서 랭킹 시스템 구현. [랭킹 시스템](https://github.com/pjsjyh/Penguin_Upgrade/blob/main/PenguinAdventure/Assets/Script/Lanking/Ranking.cs)
 6) 게임 시스템
    - 씬 변환, 배경 음악, 몬스터 셋팅, 궁극기 정보 셋팅 등 제작.
