@@ -28,7 +28,7 @@ public class Ranking : MonoBehaviour
     public TextMeshProUGUI scoreText;  // Unity UI에 표시할 Text 객체
     public ScrollRect scrollRect;
     public RectTransform contentRectTransform;
-    // ✅ Firebase에서 데이터를 받아서 UI에 표시
+    // Firebase에서 데이터를 받아서 UI에 표시
     public void canvasReset()
     {
         LayoutRebuilder.ForceRebuildLayoutImmediate(contentRectTransform);
@@ -36,14 +36,14 @@ public class Ranking : MonoBehaviour
     }
     public void OnRankingsLoaded(string jsonData)
     {
-        Debug.Log("🔥 랭킹 데이터 로드 완료: " + jsonData);
+        Debug.Log("랭킹 데이터 로드 완료: " + jsonData);
         canvasReset();
-          // ✅ JSON 데이터를 C# 리스트로 변환
+          // JSON 데이터를 C# 리스트로 변환
           RankingData[] rankings = JsonHelper.FromJson<RankingData>(jsonData);
         nameText.text = "";
         scoreText.text = "";
-        // ✅ UI 업데이트
-        //rankingText.text = "🏆 랭킹 🏆\n";
+        // UI 업데이트
+        //rankingText.text = "랭킹 n";
         for (int i = 0; i < rankings.Length; i++)
         {
             nameText.text += $"{i + 1}. {rankings[i].username}\n";
@@ -57,7 +57,7 @@ public class Ranking : MonoBehaviour
         public int score;
     }
 
-    // ✅ JSON 배열 변환을 위한 Helper 클래스
+    // JSON 배열 변환을 위한 Helper 클래스
     public static class JsonHelper
     {
         public static T[] FromJson<T>(string json)
@@ -100,7 +100,7 @@ public class Ranking : MonoBehaviour
                 }
                 else
                 {
-                    Debug.LogError("❌ Firebase 랭킹 불러오기 실패: " + task.Exception);
+                    Debug.LogError("Firebase 랭킹 불러오기 실패: " + task.Exception);
                 }
             });
     }
@@ -109,7 +109,7 @@ public class Ranking : MonoBehaviour
         nameText.text = "";
         scoreText.text = "";
         int i = 0;
-        // ✅ 콘솔에 출력
+        // 출력
         foreach (var entry in rankings)
         {
             nameText.text += $"{i + 1}. {entry.username}\n";
