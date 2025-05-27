@@ -24,7 +24,7 @@ https://penguin-build.vercel.app/
 - 메모리 관리 최적화
 
 
-# 📝사용기술 및
+# 📝사용기술
 1) 디자인 패턴을 활용한 관리
    - 싱글톤 패턴을 활용한 플레이어 데이터 관리
      - 플레이어가 한명인것을 활용해 싱글톤 패턴을 활용해 데이터 관리. [플레이어 스크립트](https://github.com/pjsjyh/Penguin_Upgrade/blob/main/PenguinAdventure/Assets/Script/Player/PlayerManager.cs)
